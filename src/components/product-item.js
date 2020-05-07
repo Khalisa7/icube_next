@@ -1,0 +1,35 @@
+import React, { Fragment } from 'react';
+import Link from 'next/link'
+
+const ProductGrid = (
+    {
+        id = undefined,
+        name = undefined,
+        image = undefined,
+        price = undefined,
+        product_url = undefined,
+    }
+) => {
+    return (
+        <Fragment>
+            <Link href={`/products/${product_url}`} >
+                <div className="product-item">
+                    <div className="product-item-image">
+                        <img src={image.url} alt={name}  />
+                    </div>
+                    <div className="product-item-info">
+                        <div className="product-name">
+                            <p>{name}</p>
+                        </div>
+                        <div className="product-price">
+                            <span className="old-price">{price.regular_price.currency} {price.regular_price.value}</span>
+                            <span className="special-price">{price.final_price.currency} {price.final_price.value}</span>
+                        </div>
+                    </div>
+                </div>
+            </Link>
+        </Fragment>
+    );
+};
+
+export default ProductGrid;

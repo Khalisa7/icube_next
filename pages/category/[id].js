@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react';
 import { useQuery } from '@apollo/react-hooks';
+import { useRouter } from 'next/router';
 import { withApollo } from '~/lib/apollo';
 import { GET_CATEGORY } from '~/gql/category';
 import Layout from '~components/layout';
 import ProductGrid from '~/components/product-grid';
 
-const Home = () => {
-    const { loading, error, data } = useQuery(GET_CATEGORY, {variables : {id:"2"}} );
-    
+
+const CategoryPage = () => {
+    const { id } = useRouter().query;
+    const { loading, error, data } = useQuery(GET_CATEGORY, {variables : { id:id }} );
     if (error) return (
         <Fragment>
             <Layout>
@@ -19,7 +21,7 @@ const Home = () => {
     if (loading) return (
         <Fragment>
             <Layout>
-                <h3>Loading</h3>
+                <p>Loading</p>
             </Layout>
         </Fragment>
     );
@@ -33,4 +35,4 @@ const Home = () => {
     );
 };
 
-export default withApollo()(Home);
+export default withApollo()(CategoryPage);
