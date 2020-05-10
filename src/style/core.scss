@@ -16,10 +16,10 @@ p{
     display: block;
     background-color: white;
     overflow: scroll;
+    position: relative;
 }
 .header{
     height: 50px;
-    border-radius: 5px;
     overflow: hidden;
     text-align: center;
     background-color: rgb(0, 0, 0);
@@ -149,4 +149,45 @@ p{
         width: 100%;
     }
     
+}
+
+.product-form{
+    position: fixed;
+    bottom: 0;
+    // height: 80px;
+    background: whitesmoke;
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    .fields{
+        display: block;
+        text-align: center;
+    }
+    .qty{
+        padding: 10px 15px;
+        label{
+            display: none;
+        }
+        button{
+            background: black;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        input{
+            padding: 10px 15px;
+        }
+    }
+    .action{
+        button{
+            background: black;
+            padding: 10px 40px;
+            color: white;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    }
 }

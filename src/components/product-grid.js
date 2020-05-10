@@ -2,7 +2,6 @@ import React, { Fragment } from 'react';
 import ProductItem from '~/components/product-item';
 
 const ProductGrid = ({data = undefined}) => {
-    console.log(data);
     if(data){
         return(
             <Fragment>

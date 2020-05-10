@@ -35,4 +35,4 @@ const CategoryPage = () => {
     );
 };
 
-export default withApollo()(CategoryPage);
+export default withApollo(CategoryPage);
