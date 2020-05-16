@@ -28,7 +28,6 @@ const ProductPage = () => {
             </Layout>
         </Fragment>
     );
-
     return (
         <Fragment>
             <Layout>
@@ -45,6 +44,8 @@ const ProductPage = () => {
                     name={data.products.items[0].name}
                     image={data.products.items[0].image}
                     price={data.products.items[0].price_range.minimum_price}
+                    url={slug}
+
                 />
             </Layout>
         </Fragment>

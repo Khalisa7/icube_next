@@ -7,6 +7,16 @@ export const GET_CATEGORY = gql`
                 id
                 name
                 url_path
+                children{
+                    id
+                    name
+                    url_path
+                    children{
+                        id
+                        name
+                        url_path
+                    }
+                }
             }
         }
     }

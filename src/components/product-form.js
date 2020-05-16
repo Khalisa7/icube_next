@@ -2,15 +2,15 @@ import React, { Fragment, useState } from 'react';
 import { withRedux } from '~/lib/redux';
 import { connect } from 'react-redux';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
-        data: state
+        data: state.cart
     }
 }
-
 const mapDispatchToProps = dispatch => {
     return {
         addToCart: (payloads) => dispatch({ type: 'ADD_TO_CART', payloads: payloads }),
+        updateCart: (payloads) => dispatch({ type: 'UPDATE_CART', payloads: payloads }),
     }
 }
 
@@ -20,7 +20,9 @@ const _Render = (
         name = undefined,
         image = undefined,
         price = undefined,
-        addToCart = undefined
+        url = undefined,
+        data = undefined,
+        addToCart = undefined,
     }
 ) => {
     const [qty, setQty] = useState(1);
@@ -40,9 +42,9 @@ const _Render = (
             'product_name': e.target.product_name.value,
             'product_image': e.target.product_image.value,
             'product_price': e.target.product_price.value,
-            'product_qty': e.target.product_qty.value
+            'product_qty': e.target.product_qty.value,
+            'product_url': e.target.product_url.value
         })
-
     }
 
     return (
@@ -52,7 +54,8 @@ const _Render = (
                     <input type="hidden" name="product_id" value={id} />
                     <input type="hidden" name="product_name" value={name} />
                     <input type="hidden" name="product_image" value={image.url} />
-                    <input type="hidden" name="product_price" value={price.final_price.value} />
+                    <input type="hidden" name="product_price" value={qty*price.final_price.value} />
+                    <input type="hidden" name="product_url" value={url} />
                     <div className="fields qty">
                         <label>
                             Jumlah

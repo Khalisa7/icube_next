@@ -12,13 +12,12 @@ const mapStateToProps = ( state ) => {
 const _Render = ({active, data}) => {
     return (
         <Fragment>
-
             <div className="header">
-                <h3>Icube Training Result <span><Link href="/cart" as="/order-cart"><a>Cart ({data === undefined? 0: data.length}  )</a></Link></span></h3>
+                <h3>
+                    <span className="link-homepage"><Link href="/" as="/"><a>Icube Training Result</a></Link></span>
+                    <span><Link href="/cart" as="/cart"><a>Cart ({data === undefined? 0: data.length}  )</a></Link></span>
+                </h3>
             </div>
-            <Link href="/">
-                <a>Home</a>
-            </Link>
         </Fragment>
     );
 };

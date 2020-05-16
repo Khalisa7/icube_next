@@ -22,12 +22,12 @@ const Home = () => {
             </Layout>
         </Fragment>
     );
-
+    const category = data.categoryList[0].children;
     return (
         <Fragment>
             <Layout>
-                <ul className="list">
-                    { data.categoryList[0].children.map((data, i)=>{
+                <ul className="list level0">
+                    { category.map((data, i)=>{
                         return (
                             <li key={i} className="category-list">
                                 <Link href={"/category/[id]"} as={"/category/"+data.id} >
@@ -35,6 +35,33 @@ const Home = () => {
                                         {data.name}
                                     </a>
                                 </Link>
+
+                                <ul className="list level1">
+                                    {data.children.map((data,i)=>{
+                                        return (
+                                            <li key={i} className="category-list">
+                                                <Link href={"/category/[id]"} as={"/category/"+data.id} >
+                                                    <a>
+                                                        {data.name}
+                                                    </a>
+                                                </Link>
+                                                <ul className="list level2">
+                                                    {data.children.map((data,i)=>{
+                                                        return (
+                                                            <li key={i} className="category-list">
+                                                                <Link href={"/category/[id]"} as={"/category/"+data.id} >
+                                                                    <a>
+                                                                        {data.name}
+                                                                    </a>
+                                                                </Link>
+                                                            </li>
+                                                        )
+                                                    })}
+                                                </ul>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
                             </li>
                         );
                     }) }

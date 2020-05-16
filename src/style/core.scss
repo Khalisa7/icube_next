@@ -6,6 +6,9 @@ html,body{
 p{
     font-size: 12px;
 }
+.link-homepage{
+    font-size: 20px !important;
+}
 .layout{
     max-width: 480px;
     width: 100%;
@@ -33,23 +36,9 @@ p{
         span{
             margin-left: 15px;
             font-size: 14px;
-        }
-    }
-}
-.list{
-    list-style-type: none;
-    padding-left: 0;
-    .category-list{
-        background-color: orange;
-        text-align: center;
-        &:hover{
-            background-color: black;
-        }
-        a{
-            padding: 15px;
-            color: white;
-            text-decoration: none;
-            display: block;
+            a{
+                color: white;
+            }
         }
     }
 }
@@ -97,7 +86,6 @@ p{
                 .special-price{
                     color: #030303;
                     font-size: 14px;
-                    text-decoration: line-through;
                     font-weight: bold;
                 }
             }
@@ -135,7 +123,6 @@ p{
         .special-price{
             color: #030303;
             font-size: 18px;
-            text-decoration: line-through;
             font-weight: bold;
         }
     }
@@ -190,6 +177,30 @@ p{
             color: white;
             border-radius: 5px;
             font-size: 14px;
+        }
+    }
+}
+
+.cart{
+    list-style-type: none;
+    padding: 0;
+    margin:0;
+    .cart-item{
+        display: flex;
+        border: 2px solid black;
+        border-radius: 15px;
+        margin: 15px;
+        padding:15px;
+        .m-0{
+            margin:0;
+        }
+        .item-image{
+            flex: 0 0 30%;
+            height: 100px;
+            overflow: hidden;
+        }
+        img{
+            width: 100%;
         }
     }
 }
