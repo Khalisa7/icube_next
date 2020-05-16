@@ -3,9 +3,6 @@ html,body{
     margin: 0;
     font-family: 'Open Sans', 'Roboto', sans-serif;
 }
-// body{
-//     background-color: #f3f3f3;
-// }
 p{
     font-size: 12px;
 }
@@ -32,6 +29,11 @@ p{
         top: 50%;
         left: 50%;
         color: white;
+        width: 100%;
+        span{
+            margin-left: 15px;
+            font-size: 14px;
+        }
     }
 }
 .list{
