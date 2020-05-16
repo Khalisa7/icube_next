@@ -10,7 +10,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => {
     return {
         addToCart: (payloads) => dispatch({ type: 'ADD_TO_CART', payloads: payloads }),
-        updateCart: (payloads) => dispatch({ type: 'UPDATE_CART', payloads: payloads }),
     }
 }
 
